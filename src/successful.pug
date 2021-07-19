@@ -1,0 +1,11 @@
+extends html-components/layouts/_default.pug
+
+block content
+	form(block="modal-form")
+		div(elem="container")
+			div(elem="head")
+				h2(elem="title") Successfull payment
+				p(elem="hint") Your request has been accepted and will be processed within 24 working hours. We will send you a payment details and all information to your email.
+			div(elem="img-wrap" mod="status")
+				img(src="img/successful.png", alt="successful")
+			button.js-back-btn(elem="submit-btn") Back

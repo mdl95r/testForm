@@ -1,0 +1,34 @@
+extends html-components/layouts/_default.pug
+
+block content
+	form(block="modal-form")
+		div(elem="container")
+			div(elem="chosen-list")
+				div(elem="product-group")
+					h2(elem="product-title") Info
+					label(elem="product-label") Enter your email address
+						input.js-group-input(elem="product-input" placeholder="team@checkforpatent.com")
+				each item, i in Array(5)
+					div(elem="product-group")
+						div(elem="product-head")
+							h2(elem="product-title") Product #{i + 1}
+							button(elem="product-button" title="Remove product")
+								if i !== 0
+									<svg width="13" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<g clip-path="url(#clip0)" fill="#23C967">
+											<path d="M6.5 13.206c-3.584 0-6.5-2.926-6.5-6.524S2.916.158 6.5.158 13 3.084 13 6.682s-2.916 6.524-6.5 6.524zm0-12.116C3.428 1.09.929 3.598.929 6.682c0 3.084 2.499 5.592 5.571 5.592 3.072 0 5.572-2.508 5.572-5.592 0-3.084-2.5-5.592-5.572-5.592z"/>
+											<path d="M8.822 9.478a.462.462 0 01-.329-.136L3.85 4.682a.467.467 0 010-.66.463.463 0 01.657 0l4.643 4.66a.467.467 0 01-.328.796z"/>
+											<path d="M4.179 9.478a.467.467 0 01-.328-.796l4.642-4.66a.463.463 0 01.657 0 .467.467 0 010 .66l-4.643 4.66a.462.462 0 01-.328.136z"/>
+										</g>
+										<defs>
+											<clipPath id="clip0">
+											<path fill="#fff" transform="translate(0 .158)" d="M0 0h13v13.049H0z"/>
+											</clipPath>
+										</defs>
+									</svg>
+						label(elem="product-label") Enter main keyword for the product
+							input.js-product-input(elem="product-input" type="text" placeholder="for example, sylicon wine cup")
+					div(elem="product-group")
+						label(elem="product-label") Enter link to the similar product as a reference
+							input.js-product-input(elem="product-input" type="url" placeholder="https://...")
+			button.js-submit-btn(elem="submit-btn") Submit and Pay 80 USD

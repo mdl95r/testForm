@@ -1,0 +1,52 @@
+.modal-form {
+	&__product-group {
+		position: relative;
+		padding-bottom: 7px;
+		margin-bottom: 25px;
+		transition: .4s;
+		&:after {
+			display: block;
+			position: absolute;
+			top: 100%;
+			content: "";
+			width: 100%;
+			height: 1px;
+			background: #E1E3EE;
+		}
+		&:before {
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translate(-50%);
+			content: "";
+			width: 0;
+			height: 1px;
+			opacity: 0;
+			transition: 0.2s;
+		}
+		&_invalid {
+			&:after {
+				display: none;
+			}
+			&:before {
+				width: 100%;
+				background: red;
+				opacity: 1;
+			}
+		}
+		&_valid {
+			&:after {
+				display: none;
+			}
+			&:before {
+				width: 100%;
+				background: green;
+				opacity: 1;
+			}
+		}
+		&_remove {
+			opacity: 0;
+		}
+	}
+}

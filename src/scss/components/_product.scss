@@ -1,0 +1,40 @@
+.modal-form {
+	&__product {
+		&-title {
+			font-size: 18px;
+			font-weight: 700;
+			margin-bottom: 12px;
+		}
+		&-label {
+			font-weight: 500;
+			user-select: none;
+		}
+		&-input {
+			width: 100%;
+			font-size: 16px;
+			margin-top: 12px;
+			border: none;
+			&:focus {
+				outline: none;
+			}
+			&::placeholder{
+				color: #D0D3E2;
+			}
+		}
+		&-head {
+			display: flex;
+			align-items: center;
+			margin-bottom: 12px;
+			.modal-form__product-title {
+				margin-bottom: 0;
+			}
+		}
+		&-button {
+			display: flex;
+			align-items: center;
+			width: 20px;
+			height: 20px;
+			margin-left: 5px;
+		}
+	}
+}

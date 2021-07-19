@@ -1,0 +1,55 @@
+extends html-components/layouts/_default.pug
+
+block content
+	-
+		const moreProducts = {
+			title: 'Adding more products',
+			subTitle: 'The more items you check, the better the price.',
+			products: [
+				{
+					active: true,
+					checked: true,
+					price: 80,
+					title: '5 products for 80 usd / 16$ for each',
+					hint: 'You safe 36% on each patent check',
+				},
+				{
+					price: 72,
+					title: '4 products for 72 usd / 18$ for each',
+					hint: 'You safe 28% on each patent check',
+				},
+				{
+					price: 60,
+					title: '3 products for 60 usd / 20$ for each',
+					hint: 'You safe 20% on each patent check',
+				},
+				{
+					price: 44,
+					title: '2 products for 44 usd / 22$ for each',
+					hint: 'You safe 12% on each patent check',
+				},
+				{
+					price: 24.99,
+					title: '1 product for 24.99 usd',
+				},
+			],
+			button: 'Continue',
+		}
+
+	form(block="modal-form")
+		div(elem="container")
+			div(elem="head")
+				h2(elem="title") #{moreProducts.title}
+				p(elem="hint") #{moreProducts.subTitle}
+			ul(elem="products-list")
+				each product, i in moreProducts.products
+					- const isFirst = i === 0 ? 'modal-form__products-item_active' : ''
+					li(elem=`products-item ${isFirst}` data-value=`${product.price}`)
+						label(elem="products-label")
+							input(elem="products-input" type="radio", name="radio" checked=(product.checked ? 'checked' : null))
+							span(elem="fake-input")
+							div(elem="products-text")
+								h3(elem="products-title") #{product.title}
+								if product.hint
+									p(elem="products-hint") #{product.hint}
+			button.js-step-btn(elem="submit-btn") #{moreProducts.button}

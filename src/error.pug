@@ -1,0 +1,11 @@
+extends html-components/layouts/_default.pug
+
+block content
+	form(block="modal-form")
+		div(elem="container")
+			div(elem="head")
+				h2(elem="title") Your payment failed
+				p(elem="hint") Sorry, but we’ve having trouble processing your payment. You have been not charged for this transaction.
+			div(elem="img-wrap" mod="status")
+				img(src="img/failed.png", alt="error")
+			button.js-back-btn(elem="submit-btn" mod="error") Try to pay again

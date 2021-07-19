@@ -1,0 +1,63 @@
+.modal-form {
+	&__products {
+		&-list {
+			margin-bottom: 23px;
+			border: 1px solid #E1E3EE;
+			border-radius: 15px;
+		}
+		&-label {
+			display: flex;
+			align-items: center;
+			user-select: none;
+		}
+		&-item {
+			display: flex;
+			align-items: center;
+			position: relative;
+			height: 60px;
+			padding: 11px 17px 10px 17px;
+			&:not(:last-child) {
+				border-bottom: 1px solid #E1E3EE;
+			}
+			&:hover,
+			&_active {
+				background: #F4F5FA;
+				transition: .3s;
+				.modal-form__products-hint {
+					color: #23C967;
+				}
+			}	
+		}
+		&-text {
+			padding-left: 35px;
+		}
+		&-title {
+			color: #000;
+			font-size: 14px;
+			margin-bottom: 5px;
+			@media (min-width: 768px) {
+				font-size: 16px;
+			}
+		}
+		&-hint {
+			color: #A7A2CB;
+			font-size: 12px;
+			font-weight: 500;
+		}
+		&-input {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(1px,1px,1px,1px);
+			appearance: none;
+			&:checked {
+				+ .modal-form__fake-input {
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
