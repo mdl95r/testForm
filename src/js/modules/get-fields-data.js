@@ -8,7 +8,7 @@ const getDataFields = () => {
 		const el = allInputs[i];
 		if (i === 0) {
 			result.email = el.value
-		} else if (i % 2 !== 0) {
+		} else if (i % 2 === 1) {
 			result.products.push({
 				product: el.value,
 				link: allInputs[i + 1].value
