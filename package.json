@@ -4,9 +4,7 @@
   "description": "testform",
   "scripts": {
     "start": "gulp",
-    "start:hugo": "hugo server",
-    "proxy": "npx netlify-cms-proxy-server",
-    "copyStatic": "gulp copyStatic"
+    "copy": "gulp copyStatic"
   },
   "author": ".mdl aka Artyom Bogomolov",
   "license": "ISC",
